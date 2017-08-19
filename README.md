@@ -1,24 +1,13 @@
-# README
+# AuthProviderWithAuthClientDemo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demo of [AuthProvider](https://github.com/zetavg/AuthProvider) and [auth-client](https://github.com/zetavg/auth-client).
 
-Things you may want to cover:
 
-* Ruby version
+# Up and Running
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+git clone https://github.com/zetavg/AuthProviderWithAuthClientDemo.git
+cd AuthProviderWithAuthClientDemo
+bin/setup
+bin/foreman start
+```
