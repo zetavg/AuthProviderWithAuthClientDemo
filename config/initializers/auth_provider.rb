@@ -5,7 +5,6 @@ AuthProvider.configure do
   # This block will be called to get the authenticated resource owner
   # by his/her credentials
   resource_owner_from_credentials do |type, username, password|
-    fail "Please configure auth_provider resource_owner_from_credentials in #{__FILE__}"
     # Put the resource owner authentication logic here.
     #
     # The "type" parameter is the resource owner type specified by the request
@@ -25,8 +24,10 @@ AuthProvider.configure do
     # else
     #   nil
     # end
+    encrypted_password = Digest::MD5.hexdigest(password)
+    User.find_by(username: username, encrypted_password: encrypted_password)
   end
 
   # Access token expiration time (defaults to 2 hours)
-  # access_token_expires_in 2.hours
+  access_token_expires_in 65.seconds
 end
